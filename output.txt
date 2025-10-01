@@ -1,0 +1,385 @@
+[[syntax trees at end of          inlinedPositions]] // main.scala
+[33mpackage [0mmain {
+  @Child[[35m(main.Variant.Secondary : main.Variant)[0m] @Child[
+    [35m(main.Variant.Primary : main.Variant)[0m] [33msealed[0m [33mabstract[0m [33mclass[0m [35mVariant[0m()
+    [33m extends[0m [35mObject[0m(), [35mscala.reflect.Enum[0m {
+    [33mimport [0mmain.Variant.{Primary, Secondary}
+  }
+  [33mfinal[0m [33mlazy[0m [33mmodule[0m [33mval[0m [36mVariant[0m: [35mmain.Variant[0m = [33mnew [0m[35mmain.Variant[0m()
+  [33mfinal[0m [33mmodule[0m [33mclass[0m [35mVariant[0m()[33m extends[0m [35mAnyRef[0m() { [33mthis[0m: main.Variant.[33mtype[0m =>
+    [33mcase[0m [33m<static>[0m [33mval[0m [36mPrimary[0m: [35mmain.Variant[0m = main.Variant.$new([31m0[0m, [32m"Primary"[0m)
+    [33mcase[0m [33m<static>[0m [33mval[0m [36mSecondary[0m: [35mmain.Variant[0m =
+      main.Variant.$new([31m1[0m, [32m"Secondary"[0m)
+    [33mprivate[this][0m [33mval[0m [36m$values[0m: [35mArray[main.Variant][0m =
+      Array.apply[[35mmain.Variant[0m]([[33mthis[0m.Primary,[33mthis[0m.Secondary : [35mmain.Variant[0m]*)(
+        using scala.reflect.ClassTag.apply[[35mmain.Variant[0m](classOf[[35mmain.Variant[0m]))
+    [33mdef[0m [36mvalues[0m: [35mArray[0m[[35mmain.Variant[0m] = main.Variant.$values.clone()
+    [33mdef[0m [36mvalueOf[0m([36m$name[0m: [35mString[0m): [35mmain.Variant[0m =
+      $name[33m match [0m
+        {
+          [33mcase [0m[32m"Primary"[0m => [33mthis[0m.Primary
+          [33mcase [0m[32m"Secondary"[0m => [33mthis[0m.Secondary
+          [33mcase [0m_ =>
+            [33mthrow [0m
+              [33mnew [0m[35mIllegalArgumentException[0m(
+                [32m"enum main.Variant has no case with name: "[0m + $name)
+        }
+    [33mprivate[this][0m [33mdef[0m [36m$new[0m([36m_$ordinal[0m: [35mInt[0m, [36m$name[0m: [35mString[0m): [35mmain.Variant[0m =
+      {
+        [33mfinal[0m [33mclass[0m [35m$anon[0m()[33m extends[0m [35mmain.Variant[0m(), _root_.scala.runtime.
+          EnumValue {}
+        [33mnew [0m[35m$anon[0m():[35m(main.Variant & scala.runtime.EnumValue)[0m
+      }
+    [33mdef[0m [36mfromOrdinal[0m([36mordinal[0m: [35mInt[0m): [35mmain.Variant[0m =
+      [33mtry [0mmain.Variant.$values.apply(ordinal)[33m catch [0m
+        {
+          [33mcase [0m_ =>
+            [33mthrow [0m
+              [33mnew [0m[35mNoSuchElementException[0m(
+                [32m"enum main.Variant has no case with ordinal: "[0m +
+                  ordinal.toString()
+              )
+        }
+  }
+  [33mcase[0m [33mclass[0m [35mButton[0m([36mvariant[0m: [35mmain.Variant[0m)[33m extends[0m [35mObject[0m(),
+    _root_.scala.Product, _root_.scala.Serializable {
+    [33mval[0m [36mvariant[0m: [35mmain.Variant[0m
+    [33mdef[0m [36mcopy[0m([36mvariant[0m: [35mmain.Variant[0m): [35mmain.Button[0m = [33mnew [0m[35mmain.Button[0m(variant)
+    [33mdef[0m [36mcopy$default$1[0m: [35mmain.Variant @uncheckedVariance[0m = Button.this.variant
+    [33mdef[0m [36m_1[0m: [35mmain.Variant[0m = [33mthis[0m.variant
+  }
+  [33mfinal[0m [33mlazy[0m [33mmodule[0m [33mval[0m [36mButton[0m: [35mmain.Button[0m = [33mnew [0m[35mmain.Button[0m()
+  [33mfinal[0m [33mmodule[0m [33mclass[0m [35mButton[0m()[33m extends[0m [35mObject[0m() { [33mthis[0m: main.Button.[33mtype[0m =>
+    [33mdef[0m [36mapply[0m([36mvariant[0m: [35mmain.Variant[0m): [35mmain.Button[0m = [33mnew [0m[35mmain.Button[0m(variant)
+    [33mdef[0m [36munapply[0m([36mx$1[0m: [35mmain.Button[0m): [35mmain.Button[0m = x$1
+    [33minline[0m [33mtransparent[0m [33mdef[0m [36mapply[0m([33minline[0m [36mvariant[0m: [35mmain.VariantSelector[0m):
+      [35mmain.Button[0m =
+      {
+        main.Button.apply(variant = variant.apply(main.Variant))
+      }
+  }
+  [33mfinal[0m [33mlazy[0m [33mmodule[0m [33mval[0m [36mmain$package[0m: [35mmain.main$package[0m =
+    [33mnew [0m[35mmain.main$package[0m()
+  [33mfinal[0m [33mmodule[0m [33mclass[0m [35mmain$package[0m()[33m extends[0m [35mObject[0m() {
+    [33mthis[0m: main.main$package.[33mtype[0m =>
+    [33mtype[0m [35mVariantSelector[0m = main.Variant.type => main.Variant
+    [33minline[0m [33mdef[0m [36mdefaultVariant[0m: [35mmain.VariantSelector[0m =
+      ([36m_$1[0m: [35mmain.Variant.type[0m) => _$1.Primary:[35mmain.VariantSelector[0m
+    @main [33mdef[0m [36mrun[0m(): [35mUnit[0m =
+      {
+        [33mval[0m [36mbutton[0m: [35mmain.Button[0m =
+          main.Button.apply(
+            variant =
+              {
+                [33mval[0m [36m_$2[0m: [35mmain.Variant[0m = main.Variant
+                _$2.Primary
+              }
+          )
+        println(button)
+      }
+  }
+  [33mfinal[0m [33mclass[0m [35mrun[0m()[33m extends[0m [35mObject[0m() {
+    [33m<static>[0m [33mdef[0m [36mmain[0m([36margs[0m: [35mArray[String][0m): [35mUnit[0m =
+      [33mtry [0mmain.run()[33m catch [0m
+        {
+          [33mcase [0merror @ _:[35mscala.util.CommandLineParser.ParseError[0m =>
+            scala.util.CommandLineParser.showError(error)
+        }
+  }
+}
+
+[[syntax trees at end of MegaPhase{crossVersionChecks, firstTransform, checkReentrant, elimPackagePrefixes, cookComments, checkLoopingImplicits, betaReduce, inlineVals, expandSAMs, elimRepeated, refchecks, dropForMap}]] // main.scala
+[33mpackage [0mmain {
+  @SourceFile([32m"main.scala"[0m) @Child[[35m(main.Variant.Secondary : main.Variant)[0m]
+    @Child[[35m(main.Variant.Primary : main.Variant)[0m] [33msealed[0m [33mabstract[0m [33mclass[0m [35mVariant[0m
+    ()[33m extends[0m [35mObject[0m(), [35mscala.reflect.Enum[0m {
+    [33mimport [0mmain.Variant.{Primary, Secondary}
+  }
+  [33mfinal[0m [33mlazy[0m [33mmodule[0m [33mval[0m [36mVariant[0m: [35mmain.Variant[0m = [33mnew [0m[35mmain.Variant[0m()
+  @SourceFile([32m"main.scala"[0m) [33mfinal[0m [33mmodule[0m [33mclass[0m [35mVariant[0m()[33m extends[0m [35mAnyRef[0m(), [35m
+    scala.deriving.Mirror.Sum[0m {
+    [33mprivate[0m [33mdef[0m [36mwriteReplace[0m(): [35mAnyRef[0m =
+      [33mnew [0m[35mscala.runtime.ModuleSerializationProxy[0m(classOf[main.Variant.type])
+    [33mcase[0m [33m<static>[0m [33mval[0m [36mPrimary[0m: [35mmain.Variant[0m = main.Variant.$new([31m0[0m, [32m"Primary"[0m)
+    [33mcase[0m [33m<static>[0m [33mval[0m [36mSecondary[0m: [35mmain.Variant[0m =
+      main.Variant.$new([31m1[0m, [32m"Secondary"[0m)
+    [33mprivate[this][0m [33mval[0m [36m$values[0m: [35mArray[main.Variant][0m =
+      Array.apply[[35mmain.Variant[0m]([[33mthis[0m.Primary,[33mthis[0m.Secondary : [35mmain.Variant[0m])(
+        using scala.reflect.ClassTag.apply[[35mmain.Variant[0m](classOf[main.Variant]))
+    [33mdef[0m [36mvalues[0m: [35mArray[main.Variant][0m = main.Variant.$values.clone()
+    [33mdef[0m [36mvalueOf[0m([36m$name[0m: [35mString[0m): [35mmain.Variant[0m =
+      $name[33m match [0m
+        {
+          [33mcase [0m[32m"Primary"[0m => [33mthis[0m.Primary
+          [33mcase [0m[32m"Secondary"[0m => [33mthis[0m.Secondary
+          [33mcase [0m_ =>
+            [33mthrow [0m
+              [33mnew [0m[35mIllegalArgumentException[0m(
+                [32m"enum main.Variant has no case with name: "[0m + $name)
+        }
+    [33mprivate[this][0m [33mdef[0m [36m$new[0m([36m_$ordinal[0m: [35mInt[0m, [36m$name[0m: [35mString[0m): [35mmain.Variant[0m =
+      {
+        [33mfinal[0m [33mclass[0m [35m$anon[0m()[33m extends[0m [35mmain.Variant[0m(), [35mscala.runtime.EnumValue[0m, [35m
+          scala.deriving.Mirror.Singleton[0m {
+          [33mprivate[0m [33mdef[0m [36mreadResolve[0m(): [35mAnyRef[0m =
+            main.Variant.fromOrdinal([33mthis[0m.ordinal)
+          [33moverride[0m [33mdef[0m [36mproductPrefix[0m: [35mString[0m = $name
+          [33moverride[0m [33mdef[0m [36mtoString[0m(): [35mString[0m = $name
+          [33moverride[0m [33mdef[0m [36mordinal[0m: [35mInt[0m = _$ordinal
+        }
+        [33mnew [0m
+          [35m[35mmain.Variant[0m[33m with [0m[35mscala.runtime.EnumValue[0m[33m with [0m[35m
+            scala.deriving.Mirror.Singleton[0m {...}[0m
+        ():[35m(main.Variant & scala.runtime.EnumValue)[0m
+      }
+    [33mdef[0m [36mfromOrdinal[0m([36mordinal[0m: [35mInt[0m): [35mmain.Variant[0m =
+      [33mtry [0mmain.Variant.$values.apply(ordinal)[33m catch [0m
+        {
+          [33mcase [0m_ =>
+            [33mthrow [0m
+              [33mnew [0m[35mNoSuchElementException[0m(
+                [32m"enum main.Variant has no case with ordinal: "[0m +
+                  ordinal.toString()
+              )
+        }
+    [33mtype[0m [35mMirroredMonoType[0m[35m = main.Variant[0m
+    [33mdef[0m [36mordinal[0m([36mx$0[0m: [35mmain.Variant.MirroredMonoType[0m): [35mInt[0m = x$0.ordinal
+  }
+  @SourceFile([32m"main.scala"[0m) [33mcase[0m [33mclass[0m [35mButton[0m([36mvariant[0m: [35mmain.Variant[0m)[33m extends[0m
+    [35mObject[0m(), [35mProduct[0m, [35mSerializable[0m {
+    [33moverride[0m [33mdef[0m [36mhashCode[0m(): [35mInt[0m =
+      scala.util.hashing.MurmurHash3.productHash([33mthis[0m, [31m-70211317[0m, [31mtrue[0m)
+    [33moverride[0m [33mdef[0m [36mequals[0m([36mx$0[0m: [35mAny[0m): [35mBoolean[0m =
+      ([33mthis[0m eq x$0.$asInstanceOf[[35mObject[0m]) ||
+        (x$0[33m match [0m
+          {
+            [33mcase [0mx$0 @ _:[35mmain.Button @unchecked[0m =>
+              [33mthis[0m.variant == x$0.variant && x$0.canEqual([33mthis[0m)
+            [33mcase [0m_ => [31mfalse[0m
+          }
+        )
+    [33moverride[0m [33mdef[0m [36mtoString[0m(): [35mString[0m = scala.runtime.ScalaRunTime._toString([33mthis[0m)
+    [33moverride[0m [33mdef[0m [36mcanEqual[0m([36mthat[0m: [35mAny[0m): [35mBoolean[0m =
+      that.isInstanceOf[[35mmain.Button @unchecked[0m]
+    [33moverride[0m [33mdef[0m [36mproductArity[0m: [35mInt[0m = [31m1[0m
+    [33moverride[0m [33mdef[0m [36mproductPrefix[0m: [35mString[0m = [32m"Button"[0m
+    [33moverride[0m [33mdef[0m [36mproductElement[0m([36mn[0m: [35mInt[0m): [35mAny[0m =
+      n[33m match [0m
+        {
+          [33mcase [0m[31m0[0m => [33mthis[0m._1
+          [33mcase [0m_ => [33mthrow [0m[33mnew [0m[35mIndexOutOfBoundsException[0m(n.toString())
+        }
+    [33moverride[0m [33mdef[0m [36mproductElementName[0m([36mn[0m: [35mInt[0m): [35mString[0m =
+      n[33m match [0m
+        {
+          [33mcase [0m[31m0[0m => [32m"variant"[0m
+          [33mcase [0m_ => [33mthrow [0m[33mnew [0m[35mIndexOutOfBoundsException[0m(n.toString())
+        }
+    [33mval[0m [36mvariant[0m: [35mmain.Variant[0m
+    [33mdef[0m [36mcopy[0m([36mvariant[0m: [35mmain.Variant[0m): [35mmain.Button[0m = [33mnew [0m[35mmain.Button[0m(variant)
+    [33mdef[0m [36mcopy$default$1[0m: [35mmain.Variant @uncheckedVariance[0m = Button.this.variant
+    [33mdef[0m [36m_1[0m: [35mmain.Variant[0m = [33mthis[0m.variant
+  }
+  [33mfinal[0m [33mlazy[0m [33mmodule[0m [33mval[0m [36mButton[0m: [35mmain.Button[0m = [33mnew [0m[35mmain.Button[0m()
+  @SourceFile([32m"main.scala"[0m) [33mfinal[0m [33mmodule[0m [33mclass[0m [35mButton[0m()[33m extends[0m [35mObject[0m(), [35m
+    scala.deriving.Mirror.Product[0m {
+    [33mprivate[0m [33mdef[0m [36mwriteReplace[0m(): [35mAnyRef[0m =
+      [33mnew [0m[35mscala.runtime.ModuleSerializationProxy[0m(classOf[main.Button.type])
+    [33mdef[0m [36mapply[0m([36mvariant[0m: [35mmain.Variant[0m): [35mmain.Button[0m = [33mnew [0m[35mmain.Button[0m(variant)
+    [33mdef[0m [36munapply[0m([36mx$1[0m: [35mmain.Button[0m): [35mmain.Button[0m = x$1
+    [33minline[0m [33mtransparent[0m [33mdef[0m [36mapply[0m([33minline[0m [36mvariant[0m: [35mmain.VariantSelector[0m):
+      [35mmain.Button[0m =
+      {
+        main.Button.apply(variant.apply(main.Variant))
+      }
+    [33mtype[0m [35mMirroredMonoType[0m[35m = main.Button[0m
+    [33mdef[0m [36mfromProduct[0m([36mx$0[0m: [35mProduct[0m): [35mmain.Button.MirroredMonoType[0m =
+      {
+        [33mval[0m [36mvariant$1[0m: [35mmain.Variant[0m =
+          x$0.productElement([31m0[0m).$asInstanceOf[[35mmain.Variant[0m]
+        [33mnew [0m[35mmain.Button[0m(variant$1)
+      }
+  }
+  [33mfinal[0m [33mlazy[0m [33mmodule[0m [33mval[0m [36mmain$package[0m: [35mmain.main$package[0m =
+    [33mnew [0m[35mmain.main$package[0m()
+  @SourceFile([32m"main.scala"[0m) [33mfinal[0m [33mmodule[0m [33mclass[0m [35mmain$package[0m()[33m extends[0m [35mObject[0m() {
+    [33mprivate[0m [33mdef[0m [36mwriteReplace[0m(): [35mAnyRef[0m =
+      [33mnew [0m[35mscala.runtime.ModuleSerializationProxy[0m(classOf[main.main$package.type]
+        )
+    [33mtype[0m [35mVariantSelector[0m = [35mmain.Variant.type => main.Variant[0m
+    [33minline[0m [33mdef[0m [36mdefaultVariant[0m: [35mmain.VariantSelector[0m =
+      ([36m_$1[0m: [35mmain.Variant.type[0m) => _$1.Primary:[35mmain.VariantSelector[0m
+    @main [33mdef[0m [36mrun[0m(): [35mUnit[0m =
+      {
+        [33mval[0m [36mbutton[0m: [35mmain.Button[0m =
+          main.Button.apply(
+            {
+              [33mval[0m [36m_$2[0m: [35mmain.Variant[0m = main.Variant
+              _$2.Primary
+            }
+          )
+        println(button)
+      }
+  }
+  @SourceFile([32m"main.scala"[0m) [33mfinal[0m [33mclass[0m [35mrun[0m()[33m extends[0m [35mObject[0m() {
+    [33m<static>[0m [33mdef[0m [36mmain[0m([36margs[0m: [35mArray[String][0m): [35mUnit[0m =
+      [33mtry [0mmain.run()[33m catch [0m
+        {
+          [33mcase [0merror @ _:[35mscala.util.CommandLineParser.ParseError[0m =>
+            scala.util.CommandLineParser.showError(error)
+        }
+  }
+}
+
+[[syntax trees at end of MegaPhase{pruneErasedDefs, uninitialized, inlinePatterns, vcInlineMethods, seqLiterals, intercepted, getters, specializeFunctions, specializeTuples, collectNullableFields, elimOuterSelect, resolveSuper, functionXXLForwarders, paramForwarding, genericTuples, letOverApply, arrayConstructors}]] // main.scala
+[33mpackage [0mmain {
+  @SourceFile([32m"main.scala"[0m) @Child[[35m(main.Variant.Secondary : main.Variant)[0m]
+    @Child[[35m(main.Variant.Primary : main.Variant)[0m] [33msealed[0m [33mabstract[0m [33mclass[0m [35mVariant[0m
+    ()[33m extends[0m [35mObject[0m(), [35mscala.reflect.Enum[0m {
+    [33mimport [0mmain.Variant.{Primary, Secondary}
+  }
+  [33mfinal[0m [33mlazy[0m [33mmodule[0m [33mval[0m [36mVariant[0m: [35mmain.Variant[0m = [33mnew [0m[35mmain.Variant[0m()
+  @SourceFile([32m"main.scala"[0m) [33mfinal[0m [33mmodule[0m [33mclass[0m [35mVariant[0m()[33m extends[0m [35mAnyRef[0m(), [35m
+    scala.deriving.Mirror.Sum[0m {
+    [33mprivate[0m [33mdef[0m [36mwriteReplace[0m(): [35mAnyRef[0m =
+      [33mnew [0m[35mscala.runtime.ModuleSerializationProxy[0m(classOf[main.Variant.type])
+    [33mcase[0m [33m<static>[0m [33mval[0m [36mPrimary[0m: [35mmain.Variant[0m = main.Variant.$new([31m0[0m, [32m"Primary"[0m)
+    [33mcase[0m [33m<static>[0m [33mval[0m [36mSecondary[0m: [35mmain.Variant[0m =
+      main.Variant.$new([31m1[0m, [32m"Secondary"[0m)
+    [33mprivate[0m [33mval[0m [36m$values[0m: [35mArray[main.Variant][0m =
+      Array.apply[[35mmain.Variant[0m](
+        scala.runtime.ScalaRunTime.wrapRefArray[[35mmain.Variant[0m](
+          [[33mthis[0m.Primary,[33mthis[0m.Secondary : [35mmain.Variant[0m])
+      )(using scala.reflect.ClassTag.apply[[35mmain.Variant[0m](classOf[main.Variant]))
+    [33mdef[0m [36mvalues[0m: [35mArray[main.Variant][0m = main.Variant.$values.clone()
+    [33mdef[0m [36mvalueOf[0m([36m$name[0m: [35mString[0m): [35mmain.Variant[0m =
+      matchResult1[33m[[0m(main.Variant.Primary : main.Variant) |
+        (main.Variant.Secondary : main.Variant)[33m]: [0m
+        {
+          [33mcase[0m [33mval[0m [36mx1[0m: [35m($name : String)[0m = $name
+          [33mif [0m[32m"Primary"[0m == x1[33m then[0m [33mreturn[[0mmatchResult1[33m][0m [33mthis[0m.Primary[33m else [0m[31m()[0m
+          [33mif [0m[32m"Secondary"[0m == x1[33m then[0m [33mreturn[[0mmatchResult1[33m][0m [33mthis[0m.Secondary[33m else [0m[31m()[0m
+          [33mthrow [0m
+            [33mnew [0m[35mIllegalArgumentException[0m(
+              [32m"enum main.Variant has no case with name: "[0m + $name)
+        }
+    [33mprivate[0m [33mdef[0m [36m$new[0m([36m_$ordinal[0m: [35mInt[0m, [36m$name[0m: [35mString[0m): [35mmain.Variant[0m =
+      {
+        [33mfinal[0m [33mclass[0m [35m$anon[0m()[33m extends[0m [35mmain.Variant[0m(), [35mscala.runtime.EnumValue[0m, [35m
+          scala.deriving.Mirror.Singleton[0m {
+          [33mprivate[0m [33mdef[0m [36mreadResolve[0m(): [35mAnyRef[0m =
+            main.Variant.fromOrdinal([33mthis[0m.ordinal)
+          [33moverride[0m [33mdef[0m [36mproductPrefix[0m: [35mString[0m = $name
+          [33moverride[0m [33mdef[0m [36mtoString[0m(): [35mString[0m = $name
+          [33moverride[0m [33mdef[0m [36mordinal[0m: [35mInt[0m = _$ordinal
+        }
+        [33mnew [0m
+          [35m[35mmain.Variant[0m[33m with [0m[35mscala.runtime.EnumValue[0m[33m with [0m[35m
+            scala.deriving.Mirror.Singleton[0m {...}[0m
+        ():[35m(main.Variant & scala.runtime.EnumValue)[0m
+      }
+    [33mdef[0m [36mfromOrdinal[0m([36mordinal[0m: [35mInt[0m): [35mmain.Variant[0m =
+      [33mtry [0mmain.Variant.$values.apply(ordinal)[33m catch [0m
+        {
+          [33mcase [0m_ =>
+            [33mthrow [0m
+              [33mnew [0m[35mNoSuchElementException[0m(
+                [32m"enum main.Variant has no case with ordinal: "[0m +
+                  ordinal.toString()
+              )
+        }
+    [33mtype[0m [35mMirroredMonoType[0m[35m = main.Variant[0m
+    [33mdef[0m [36mordinal[0m([36mx$0[0m: [35mmain.Variant.MirroredMonoType[0m): [35mInt[0m = x$0.ordinal
+  }
+  @SourceFile([32m"main.scala"[0m) [33mcase[0m [33mclass[0m [35mButton[0m([36mvariant[0m: [35mmain.Variant[0m)[33m extends[0m
+    [35mObject[0m(), [35mProduct[0m, [35mSerializable[0m {
+    [33moverride[0m [33mdef[0m [36mhashCode[0m(): [35mInt[0m =
+      scala.util.hashing.MurmurHash3.productHash([33mthis[0m, [31m-70211317[0m, [31mtrue[0m)
+    [33moverride[0m [33mdef[0m [36mequals[0m([36mx$0[0m: [35mAny[0m): [35mBoolean[0m =
+      ([33mthis[0m eq x$0.$asInstanceOf[[35mObject[0m]) ||
+        (matchResult2[33m[[0mBoolean[33m]: [0m
+          {
+            [33mcase[0m [33mval[0m [36mx2[0m: [35m(x$0 : Any)[0m = x$0
+            [33mif [0mx2.$isInstanceOf[[35mmain.Button @unchecked[0m][33m then[0m
+              {
+                [33mcase[0m [33mval[0m [36mx$0[0m: [35mmain.Button[0m =
+                  x2.$asInstanceOf[[35mmain.Button @unchecked[0m]
+                [33mreturn[[0mmatchResult2[33m][0m
+                  [33mthis[0m.variant == x$0.variant && x$0.canEqual([33mthis[0m)
+              }
+            [33m else [0m[31m()[0m
+            [33mreturn[[0mmatchResult2[33m][0m [31mfalse[0m
+          }
+        )
+    [33moverride[0m [33mdef[0m [36mtoString[0m(): [35mString[0m = scala.runtime.ScalaRunTime._toString([33mthis[0m)
+    [33moverride[0m [33mdef[0m [36mcanEqual[0m([36mthat[0m: [35mAny[0m): [35mBoolean[0m =
+      that.isInstanceOf[[35mmain.Button @unchecked[0m]
+    [33moverride[0m [33mdef[0m [36mproductArity[0m: [35mInt[0m = [31m1[0m
+    [33moverride[0m [33mdef[0m [36mproductPrefix[0m: [35mString[0m = [32m"Button"[0m
+    [33moverride[0m [33mdef[0m [36mproductElement[0m([36mn[0m: [35mInt[0m): [35mAny[0m =
+      matchResult3[33m[[0mmain.Variant[33m]: [0m
+        {
+          [33mcase[0m [33mval[0m [36mx4[0m: [35m(n : Int)[0m = n
+          [33mif [0m[31m0[0m == x4[33m then[0m [33mreturn[[0mmatchResult3[33m][0m [33mthis[0m._1[33m else [0m[31m()[0m
+          [33mthrow [0m[33mnew [0m[35mIndexOutOfBoundsException[0m(n.toString())
+        }
+    [33moverride[0m [33mdef[0m [36mproductElementName[0m([36mn[0m: [35mInt[0m): [35mString[0m =
+      matchResult4[33m[[0m([32m"variant"[0m : String)[33m]: [0m
+        {
+          [33mcase[0m [33mval[0m [36mx5[0m: [35m(n : Int)[0m = n
+          [33mif [0m[31m0[0m == x5[33m then[0m [33mreturn[[0mmatchResult4[33m][0m [32m"variant"[0m[33m else [0m[31m()[0m
+          [33mthrow [0m[33mnew [0m[35mIndexOutOfBoundsException[0m(n.toString())
+        }
+    [33mdef[0m [36mvariant[0m: [35mmain.Variant[0m
+    [33mdef[0m [36mcopy[0m([36mvariant[0m: [35mmain.Variant[0m): [35mmain.Button[0m = [33mnew [0m[35mmain.Button[0m(variant)
+    [33mdef[0m [36mcopy$default$1[0m: [35mmain.Variant @uncheckedVariance[0m = Button.this.variant
+    [33mdef[0m [36m_1[0m: [35mmain.Variant[0m = [33mthis[0m.variant
+  }
+  [33mfinal[0m [33mlazy[0m [33mmodule[0m [33mval[0m [36mButton[0m: [35mmain.Button[0m = [33mnew [0m[35mmain.Button[0m()
+  @SourceFile([32m"main.scala"[0m) [33mfinal[0m [33mmodule[0m [33mclass[0m [35mButton[0m()[33m extends[0m [35mObject[0m(), [35m
+    scala.deriving.Mirror.Product[0m {
+    [33mprivate[0m [33mdef[0m [36mwriteReplace[0m(): [35mAnyRef[0m =
+      [33mnew [0m[35mscala.runtime.ModuleSerializationProxy[0m(classOf[main.Button.type])
+    [33mdef[0m [36mapply[0m([36mvariant[0m: [35mmain.Variant[0m): [35mmain.Button[0m = [33mnew [0m[35mmain.Button[0m(variant)
+    [33mdef[0m [36munapply[0m([36mx$1[0m: [35mmain.Button[0m): [35mmain.Button[0m = x$1
+    [33mprivate[0m [33minline[0m [33mtransparent[0m [33mdef[0m [36mapply[0m([33minline[0m [36mvariant[0m: [35mmain.VariantSelector[0m):
+      [35mmain.Button[0m = scala.compiletime.erasedValue[[35mmain.Button[0m]
+    [33mtype[0m [35mMirroredMonoType[0m[35m = main.Button[0m
+    [33mdef[0m [36mfromProduct[0m([36mx$0[0m: [35mProduct[0m): [35mmain.Button.MirroredMonoType[0m =
+      {
+        [33mval[0m [36mvariant$1[0m: [35mmain.Variant[0m =
+          x$0.productElement([31m0[0m).$asInstanceOf[[35mmain.Variant[0m]
+        [33mnew [0m[35mmain.Button[0m(variant$1)
+      }
+  }
+  [33mfinal[0m [33mlazy[0m [33mmodule[0m [33mval[0m [36mmain$package[0m: [35mmain.main$package[0m =
+    [33mnew [0m[35mmain.main$package[0m()
+  @SourceFile([32m"main.scala"[0m) [33mfinal[0m [33mmodule[0m [33mclass[0m [35mmain$package[0m()[33m extends[0m [35mObject[0m() {
+    [33mprivate[0m [33mdef[0m [36mwriteReplace[0m(): [35mAnyRef[0m =
+      [33mnew [0m[35mscala.runtime.ModuleSerializationProxy[0m(classOf[main.main$package.type]
+        )
+    [33mtype[0m [35mVariantSelector[0m = [35mmain.Variant.type => main.Variant[0m
+    [33mprivate[0m [33minline[0m [33mdef[0m [36mdefaultVariant[0m: [35mmain.VariantSelector[0m =
+      scala.compiletime.erasedValue[[35mmain.VariantSelector[0m]
+    @main [33mdef[0m [36mrun[0m(): [35mUnit[0m =
+      {
+        [33mval[0m [36mbutton[0m: [35mmain.Button[0m =
+          main.Button.apply(
+            {
+              [33mval[0m [36m_$2[0m: [35mmain.Variant[0m = main.Variant
+              _$2.Primary
+            }
+          )
+        println(button)
+      }
+  }
+  @SourceFile([32m"main.scala"[0m) [33mfinal[0m [33mclass[0m [35mrun[0m()[33m extends[0m [35mObject[0m() {
+    [33m<static>[0m [33mdef[0m [36mmain[0m([36margs[0m: [35mArray[String][0m): [35mUnit[0m =
+      [33mtry [0mmain.run()[33m catch [0m
+        {
+          [33mcase [0merror @ _:[35mscala.util.CommandLineParser.ParseError[0m =>
+            scala.util.CommandLineParser.showError(error)
+        }
+  }
+}
+
