@@ -29,7 +29,6 @@ object Button {
 }
 
 @main def run() = {
-  // Usage - compiled to Button(Style.Button) with no lambda!
   val button1 = Button()
   val button2 = Button(variant = _.Secondary)
   val button3 = Button(variant = _.Secondary, size = _.Large)
