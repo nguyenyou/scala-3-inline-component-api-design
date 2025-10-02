@@ -1,4 +1,14 @@
 package main
+import scala.language.implicitConversions
+
+object Implicits {
+  inline implicit def variantToVariantSelector(
+      v: Variant
+  ): VariantSelector =
+    _ => v
+}
+
+import Implicits.variantToVariantSelector
 
 enum Variant {
   case Primary, Secondary
@@ -26,11 +36,6 @@ object Button {
 }
 
 @main def run() = {
-  // Usage - compiled to Button(Style.Button) with no lambda!
-  val button1 = Button()
-  val button2 = Button(variant = _.Secondary)
-  val button3 = Button(variant = _.Secondary, size = _.Large)
-  println(button1)
-  println(button2)
-  println(button3)
+  val button3 = Button(variant = Variant.Secondary)
+  println(s"Regular usage (has default lambda): $button3")
 }

@@ -65,12 +65,12 @@ package main {
         using scala.reflect.ClassTag.apply[main.Variant](classOf[main.Variant]))
     def values: Array[main.Variant] = main.Variant.$values.clone()
     def valueOf($name: String): main.Variant =
-      $name match 
+      $name match
         {
           case "Primary" => this.Primary
           case "Secondary" => this.Secondary
           case _ =>
-            throw 
+            throw
               new IllegalArgumentException(
                 "enum main.Variant has no case with name: " + $name)
         }
@@ -81,10 +81,10 @@ package main {
         new $anon():(main.Variant & scala.runtime.EnumValue)
       }
     def fromOrdinal(ordinal: Int): main.Variant =
-      try main.Variant.$values.apply(ordinal) catch 
+      try main.Variant.$values.apply(ordinal) catch
         {
           case _ =>
-            throw 
+            throw
               new NoSuchElementException(
                 "enum main.Variant has no case with ordinal: " +
                   ordinal.toString()
@@ -106,13 +106,13 @@ package main {
         using scala.reflect.ClassTag.apply[main.Size](classOf[main.Size]))
     def values: Array[main.Size] = main.Size.$values.clone()
     def valueOf($name: String): main.Size =
-      $name match 
+      $name match
         {
           case "Small" => this.Small
           case "Medium" => this.Medium
           case "Large" => this.Large
           case _ =>
-            throw 
+            throw
               new IllegalArgumentException(
                 "enum main.Size has no case with name: " + $name)
         }
@@ -123,10 +123,10 @@ package main {
         new $anon():(main.Size & scala.runtime.EnumValue)
       }
     def fromOrdinal(ordinal: Int): main.Size =
-      try main.Size.$values.apply(ordinal) catch 
+      try main.Size.$values.apply(ordinal) catch
         {
           case _ =>
-            throw 
+            throw
               new NoSuchElementException(
                 "enum main.Size has no case with ordinal: " + ordinal.toString()
                 )
@@ -205,7 +205,7 @@ package main {
   }
   final class run() extends Object() {
     <static> def main(args: Array[String]): Unit =
-      try main.run() catch 
+      try main.run() catch
         {
           case error @ _:scala.util.CommandLineParser.ParseError =>
             scala.util.CommandLineParser.showError(error)
@@ -221,7 +221,7 @@ package main {
     import main.Variant.{Primary, Secondary}
   }
   final lazy module val Variant: main.Variant = new main.Variant()
-  @SourceFile("main.scala") final module class Variant() extends AnyRef(), 
+  @SourceFile("main.scala") final module class Variant() extends AnyRef(),
     scala.deriving.Mirror.Sum {
     private def writeReplace(): AnyRef =
       new scala.runtime.ModuleSerializationProxy(classOf[main.Variant.type])
@@ -233,18 +233,18 @@ package main {
         using scala.reflect.ClassTag.apply[main.Variant](classOf[main.Variant]))
     def values: Array[main.Variant] = main.Variant.$values.clone()
     def valueOf($name: String): main.Variant =
-      $name match 
+      $name match
         {
           case "Primary" => this.Primary
           case "Secondary" => this.Secondary
           case _ =>
-            throw 
+            throw
               new IllegalArgumentException(
                 "enum main.Variant has no case with name: " + $name)
         }
     private[this] def $new(_$ordinal: Int, $name: String): main.Variant =
       {
-        final class $anon() extends main.Variant(), scala.runtime.EnumValue, 
+        final class $anon() extends main.Variant(), scala.runtime.EnumValue,
           scala.deriving.Mirror.Singleton {
           private def readResolve(): AnyRef =
             main.Variant.fromOrdinal(this.ordinal)
@@ -252,16 +252,16 @@ package main {
           override def toString(): String = $name
           override def ordinal: Int = _$ordinal
         }
-        new 
-          main.Variant with scala.runtime.EnumValue with 
+        new
+          main.Variant with scala.runtime.EnumValue with
             scala.deriving.Mirror.Singleton {...}
         ():(main.Variant & scala.runtime.EnumValue)
       }
     def fromOrdinal(ordinal: Int): main.Variant =
-      try main.Variant.$values.apply(ordinal) catch 
+      try main.Variant.$values.apply(ordinal) catch
         {
           case _ =>
-            throw 
+            throw
               new NoSuchElementException(
                 "enum main.Variant has no case with ordinal: " +
                   ordinal.toString()
@@ -276,7 +276,7 @@ package main {
     import main.Size.{Small, Medium, Large}
   }
   final lazy module val Size: main.Size = new main.Size()
-  @SourceFile("main.scala") final module class Size() extends AnyRef(), 
+  @SourceFile("main.scala") final module class Size() extends AnyRef(),
     scala.deriving.Mirror.Sum {
     private def writeReplace(): AnyRef =
       new scala.runtime.ModuleSerializationProxy(classOf[main.Size.type])
@@ -288,19 +288,19 @@ package main {
         using scala.reflect.ClassTag.apply[main.Size](classOf[main.Size]))
     def values: Array[main.Size] = main.Size.$values.clone()
     def valueOf($name: String): main.Size =
-      $name match 
+      $name match
         {
           case "Small" => this.Small
           case "Medium" => this.Medium
           case "Large" => this.Large
           case _ =>
-            throw 
+            throw
               new IllegalArgumentException(
                 "enum main.Size has no case with name: " + $name)
         }
     private[this] def $new(_$ordinal: Int, $name: String): main.Size =
       {
-        final class $anon() extends main.Size(), scala.runtime.EnumValue, 
+        final class $anon() extends main.Size(), scala.runtime.EnumValue,
           scala.deriving.Mirror.Singleton {
           private def readResolve(): AnyRef =
             main.Size.fromOrdinal(this.ordinal)
@@ -308,16 +308,16 @@ package main {
           override def toString(): String = $name
           override def ordinal: Int = _$ordinal
         }
-        new 
-          main.Size with scala.runtime.EnumValue with 
+        new
+          main.Size with scala.runtime.EnumValue with
             scala.deriving.Mirror.Singleton {...}
         ():(main.Size & scala.runtime.EnumValue)
       }
     def fromOrdinal(ordinal: Int): main.Size =
-      try main.Size.$values.apply(ordinal) catch 
+      try main.Size.$values.apply(ordinal) catch
         {
           case _ =>
-            throw 
+            throw
               new NoSuchElementException(
                 "enum main.Size has no case with ordinal: " + ordinal.toString()
                 )
@@ -331,7 +331,7 @@ package main {
       scala.util.hashing.MurmurHash3.productHash(this, -70211317, true)
     override def equals(x$0: Any): Boolean =
       (this eq x$0.$asInstanceOf[Object]) ||
-        (x$0 match 
+        (x$0 match
           {
             case x$0 @ _:main.Button @unchecked =>
               this.variant == x$0.variant && this.size == x$0.size &&
@@ -345,14 +345,14 @@ package main {
     override def productArity: Int = 2
     override def productPrefix: String = "Button"
     override def productElement(n: Int): Any =
-      n match 
+      n match
         {
           case 0 => this._1
           case 1 => this._2
           case _ => throw new IndexOutOfBoundsException(n.toString())
         }
     override def productElementName(n: Int): String =
-      n match 
+      n match
         {
           case 0 => "variant"
           case 1 => "size"
@@ -368,7 +368,7 @@ package main {
     def _2: main.Size = this.size
   }
   final lazy module val Button: main.Button = new main.Button()
-  @SourceFile("main.scala") final module class Button() extends Object(), 
+  @SourceFile("main.scala") final module class Button() extends Object(),
     scala.deriving.Mirror.Product {
     private def writeReplace(): AnyRef =
       new scala.runtime.ModuleSerializationProxy(classOf[main.Button.type])
@@ -447,7 +447,7 @@ package main {
   }
   @SourceFile("main.scala") final class run() extends Object() {
     <static> def main(args: Array[String]): Unit =
-      try main.run() catch 
+      try main.run() catch
         {
           case error @ _:scala.util.CommandLineParser.ParseError =>
             scala.util.CommandLineParser.showError(error)
@@ -463,7 +463,7 @@ package main {
     import main.Variant.{Primary, Secondary}
   }
   final lazy module val Variant: main.Variant = new main.Variant()
-  @SourceFile("main.scala") final module class Variant() extends AnyRef(), 
+  @SourceFile("main.scala") final module class Variant() extends AnyRef(),
     scala.deriving.Mirror.Sum {
     private def writeReplace(): AnyRef =
       new scala.runtime.ModuleSerializationProxy(classOf[main.Variant.type])
@@ -478,18 +478,18 @@ package main {
     def values: Array[main.Variant] = main.Variant.$values.clone()
     def valueOf($name: String): main.Variant =
       matchResult1[(main.Variant.Primary : main.Variant) |
-        (main.Variant.Secondary : main.Variant)]: 
+        (main.Variant.Secondary : main.Variant)]:
         {
           case val x1: ($name : String) = $name
           if "Primary" == x1 then return[matchResult1] this.Primary else ()
           if "Secondary" == x1 then return[matchResult1] this.Secondary else ()
-          throw 
+          throw
             new IllegalArgumentException(
               "enum main.Variant has no case with name: " + $name)
         }
     private def $new(_$ordinal: Int, $name: String): main.Variant =
       {
-        final class $anon() extends main.Variant(), scala.runtime.EnumValue, 
+        final class $anon() extends main.Variant(), scala.runtime.EnumValue,
           scala.deriving.Mirror.Singleton {
           private def readResolve(): AnyRef =
             main.Variant.fromOrdinal(this.ordinal)
@@ -497,16 +497,16 @@ package main {
           override def toString(): String = $name
           override def ordinal: Int = _$ordinal
         }
-        new 
-          main.Variant with scala.runtime.EnumValue with 
+        new
+          main.Variant with scala.runtime.EnumValue with
             scala.deriving.Mirror.Singleton {...}
         ():(main.Variant & scala.runtime.EnumValue)
       }
     def fromOrdinal(ordinal: Int): main.Variant =
-      try main.Variant.$values.apply(ordinal) catch 
+      try main.Variant.$values.apply(ordinal) catch
         {
           case _ =>
-            throw 
+            throw
               new NoSuchElementException(
                 "enum main.Variant has no case with ordinal: " +
                   ordinal.toString()
@@ -521,7 +521,7 @@ package main {
     import main.Size.{Small, Medium, Large}
   }
   final lazy module val Size: main.Size = new main.Size()
-  @SourceFile("main.scala") final module class Size() extends AnyRef(), 
+  @SourceFile("main.scala") final module class Size() extends AnyRef(),
     scala.deriving.Mirror.Sum {
     private def writeReplace(): AnyRef =
       new scala.runtime.ModuleSerializationProxy(classOf[main.Size.type])
@@ -536,23 +536,23 @@ package main {
     def values: Array[main.Size] = main.Size.$values.clone()
     def valueOf($name: String): main.Size =
       matchResult2[(main.Size.Small : main.Size) |
-        (main.Size.Medium : main.Size) | (main.Size.Large : main.Size)]: 
+        (main.Size.Medium : main.Size) | (main.Size.Large : main.Size)]:
         {
           case val x2: ($name : String) = $name
-          x2 match 
+          x2 match
             {
               case "Small" => return[matchResult2] this.Small
               case "Medium" => return[matchResult2] this.Medium
               case "Large" => return[matchResult2] this.Large
               case _ =>
-                throw 
+                throw
                   new IllegalArgumentException(
                     "enum main.Size has no case with name: " + $name)
             }
         }
     private def $new(_$ordinal: Int, $name: String): main.Size =
       {
-        final class $anon() extends main.Size(), scala.runtime.EnumValue, 
+        final class $anon() extends main.Size(), scala.runtime.EnumValue,
           scala.deriving.Mirror.Singleton {
           private def readResolve(): AnyRef =
             main.Size.fromOrdinal(this.ordinal)
@@ -560,16 +560,16 @@ package main {
           override def toString(): String = $name
           override def ordinal: Int = _$ordinal
         }
-        new 
-          main.Size with scala.runtime.EnumValue with 
+        new
+          main.Size with scala.runtime.EnumValue with
             scala.deriving.Mirror.Singleton {...}
         ():(main.Size & scala.runtime.EnumValue)
       }
     def fromOrdinal(ordinal: Int): main.Size =
-      try main.Size.$values.apply(ordinal) catch 
+      try main.Size.$values.apply(ordinal) catch
         {
           case _ =>
-            throw 
+            throw
               new NoSuchElementException(
                 "enum main.Size has no case with ordinal: " + ordinal.toString()
                 )
@@ -583,7 +583,7 @@ package main {
       scala.util.hashing.MurmurHash3.productHash(this, -70211317, true)
     override def equals(x$0: Any): Boolean =
       (this eq x$0.$asInstanceOf[Object]) ||
-        (matchResult3[Boolean]: 
+        (matchResult3[Boolean]:
           {
             case val x3: (x$0 : Any) = x$0
             if x3.$isInstanceOf[main.Button @unchecked] then
@@ -604,7 +604,7 @@ package main {
     override def productArity: Int = 2
     override def productPrefix: String = "Button"
     override def productElement(n: Int): Any =
-      matchResult4[main.Variant | main.Size]: 
+      matchResult4[main.Variant | main.Size]:
         {
           case val x5: (n : Int) = n
           if 0 == x5 then return[matchResult4] this._1 else ()
@@ -612,7 +612,7 @@ package main {
           throw new IndexOutOfBoundsException(n.toString())
         }
     override def productElementName(n: Int): String =
-      matchResult5[("variant" : String) | ("size" : String)]: 
+      matchResult5[("variant" : String) | ("size" : String)]:
         {
           case val x6: (n : Int) = n
           if 0 == x6 then return[matchResult5] "variant" else ()
@@ -629,7 +629,7 @@ package main {
     def _2: main.Size = this.size
   }
   final lazy module val Button: main.Button = new main.Button()
-  @SourceFile("main.scala") final module class Button() extends Object(), 
+  @SourceFile("main.scala") final module class Button() extends Object(),
     scala.deriving.Mirror.Product {
     private def writeReplace(): AnyRef =
       new scala.runtime.ModuleSerializationProxy(classOf[main.Button.type])
@@ -706,7 +706,7 @@ package main {
   }
   @SourceFile("main.scala") final class run() extends Object() {
     <static> def main(args: Array[String]): Unit =
-      try main.run() catch 
+      try main.run() catch
         {
           case error @ _:scala.util.CommandLineParser.ParseError =>
             scala.util.CommandLineParser.showError(error)
@@ -715,3 +715,98 @@ package main {
 }
 
 ```
+
+## Explain
+
+This is a sophisticated Component API Design Pattern demonstrating advanced Scala 3 metaprogramming techniques. Let me break down the key concepts:
+
+### Core Design Pattern (Lines 4-29)
+
+#### The Problem Being Solved:
+
+This creates a React/Vue-style component API where you can write:
+Button(variant = _.Secondary, size = _.Large)
+instead of:
+Button(variant = Variant.Secondary, size = Size.Large)
+
+#### Key Components:
+
+1. Type Aliases (Lines 14-15)
+
+type VariantSelector = Variant.type => Variant
+type SizeSelector = Size.type => Size
+These define function types that take the enum's companion object and return an enum value. This enables the \_.Secondary syntax.
+
+2. Inline Default Functions (Lines 19-20)
+
+inline def defaultVariant: VariantSelector = _.Primary
+inline def defaultSize: SizeSelector = _.Medium
+
+- inline tells the compiler to inline these at call sites (compile-time expansion)
+- They're functions that select default enum values
+- The \_.Primary syntax is sugar for (x: Variant.type) => x.Primary
+
+3. The Magic: Transparent Inline Apply (Lines 23-28)
+
+transparent inline def apply(
+inline variant: VariantSelector = defaultVariant,
+inline size: SizeSelector = defaultSize
+): Button = {
+Button(variant = variant(Variant), size = size(Size))
+}
+
+Why This Works:
+
+- transparent inline: Erased at runtime, fully expanded at compile-time
+- inline parameters: Expanded at the call site
+- variant(Variant) invokes the selector function with the enum companion object
+- Default parameters use the inline default functions
+
+What the Compiler Output Shows
+
+The compiler output (lines 50-715) reveals the transformation across three compilation phases:
+
+Phase 1: After Inlining (Lines 172-203)
+
+val button1: main.Button =
+main.Button.apply(
+variant = main.Button.apply$default$1.apply(main.Variant),
+      size = main.Button.apply$default$2.apply(main.Size))
+Shows how defaults are resolved and selector functions are applied.
+
+Phase 2: After Beta-Reduction (Lines 410-446)
+
+val button1: main.Button =
+main.Button.apply(
+{
+val _$1: main.Variant = main.Variant
+_$1.Primary
+},
+{
+val _$2: main.Size = main.Size
+_$2.Medium
+}
+)
+The selector functions _.Primary and _.Medium are expanded into explicit code blocks that capture the enum companion and select the value.
+
+Phase 3: After Erasure (Lines 669-679)
+
+The inline transparent methods are completely erased, leaving only the actual enum value selections.
+
+Advanced Scala 3 Features Used
+
+1. Transparent Inline: Methods that exist only at compile-time
+2. Inline Parameters: Force compile-time evaluation
+3. Eta Expansion: \_.Primary → (x: Variant.type) => x.Primary
+4. Type-safe Enum Selection: The selector pattern ensures you can only select valid enum values
+5. Zero Runtime Overhead: All abstraction compiled away
+
+Why This Pattern is Powerful
+
+- Type Safety: Can't pass wrong enum types
+- Ergonomics: Cleaner API than passing companion objects
+- Performance: Zero runtime cost - everything inlined
+- IDE Support: Auto-completion works with \_.
+- Consistency: Mimics popular component library patterns
+
+This is an excellent example of using Scala 3's metaprogramming capabilities to create elegant DSLs with zero runtime overhead.
