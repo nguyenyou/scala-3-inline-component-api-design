@@ -2,7 +2,7 @@ package main
 import scala.language.implicitConversions
 
 object Implicits {
-  inline implicit def variantToVariantSelector(
+  transparent inline implicit def variantToVariantSelector(
       v: Variant
   ): VariantSelector =
     _ => v
@@ -23,13 +23,10 @@ type SizeSelector = Size.type => Size
 
 case class Button(variant: Variant, size: Size)
 
-inline def defaultVariant: VariantSelector = _.Primary
-inline def defaultSize: SizeSelector = _.Medium
-
 object Button {
   transparent inline def apply(
-      inline variant: VariantSelector = defaultVariant,
-      inline size: SizeSelector = defaultSize
+      inline variant: VariantSelector = _.Primary,
+      inline size: SizeSelector = _.Medium
   ): Button = {
     Button(variant = variant(Variant), size = size(Size))
   }
