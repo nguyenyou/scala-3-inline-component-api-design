@@ -6,16 +6,6 @@ object Implicits {
       v: Variant
   ): VariantSelector =
     _ => v
-
-  inline implicit def iconNameToIconNameSelector(
-      v: IconName
-  ): IconNameSelector =
-    _ => v
-
-  inline implicit def iconSignalToIconSelectorSignal(
-      s: Signal[IconName]
-  ): Signal[IconNameSelector] =
-    s.map(icon => _ => icon)
 }
 
 object Converters {
@@ -36,57 +26,27 @@ class Val[A](constantValue: A) extends Signal[A] {
   def map[B](project: A => B): Signal[B] = new Val(project(constantValue))
 }
 
-import Implicits.{
-  variantToVariantSelector,
-  iconNameToIconNameSelector,
-  iconSignalToIconSelectorSignal
-}
-// import Converters.modToValue
+import Implicits.{variantToVariantSelector}
 
 enum Variant {
   case Primary, Secondary
 }
 
-enum Size {
-  case Small, Medium, Large
-}
-
-enum IconName {
-  case Home, Search, Settings, Empty
-}
-
 type VariantSelector = Variant.type => Variant
 
-extension (value: Variant) {
-  inline def selector: VariantSelector = _ => value
-}
-
-extension (selector: VariantSelector) {
-  inline def value: Variant = selector(Variant)
-}
-
-type SizeSelector = Size.type => Size
-type IconNameSelector = IconName.type => IconName
-
-case class Button(variant: Variant, size: Size, icon: Signal[IconName])
+case class Button(variant: Variant)
 
 object Button {
   transparent inline def apply(
-      inline variant: VariantSelector = _.Primary,
-      inline size: SizeSelector = _.Medium,
-      inline icon: Signal[IconNameSelector] = Val(_.Empty)
+      inline variant: VariantSelector = _.Primary
   ): Button = {
     Button(
-      variant = variant(Variant),
-      size = size(Size),
-      icon = icon.map(_(IconName))
+      variant = variant(Variant)
     )
   }
 }
 
 @main def run() = {
-  val iconSignal: Signal[IconName] = Val(IconName.Home)
-
-  val button4 = Button(variant = Variant.Secondary, icon = iconSignal)
+  val button4 = Button(variant = Variant.Secondary)
   println(button4)
 }
