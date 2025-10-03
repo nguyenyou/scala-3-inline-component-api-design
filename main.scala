@@ -49,7 +49,7 @@ extension (selector: VariantSelector) {
 type SizeSelector = Size.type => Size
 type IconNameSelector = IconName.type => IconName
 
-case class Button(variant: Variant, size: Size, icon: IconNameSelector)
+case class Button(variant: Variant, size: Size, icon: IconName)
 
 object Button {
   transparent inline def apply(
