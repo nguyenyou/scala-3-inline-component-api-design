@@ -1,4 +1,4 @@
-package main
+package signal
 import scala.language.implicitConversions
 
 object Implicits {
@@ -11,6 +11,11 @@ object Implicits {
       v: IconName
   ): IconNameSelector =
     _ => v
+
+  inline implicit def iconSignalToIconSelectorSignal(
+      s: Signal[IconName]
+  ): Signal[IconNameSelector] =
+    s.map(icon => _ => icon)
 }
 
 object Converters {
@@ -21,7 +26,21 @@ object Converters {
   }
 }
 
-import Implicits.{variantToVariantSelector, iconNameToIconNameSelector}
+trait Signal[+A] {
+  def now(): A
+  def map[B](project: A => B): Signal[B]
+}
+
+class Val[A](constantValue: A) extends Signal[A] {
+  def now(): A = constantValue
+  def map[B](project: A => B): Signal[B] = new Val(project(constantValue))
+}
+
+import Implicits.{
+  variantToVariantSelector,
+  iconNameToIconNameSelector,
+  iconSignalToIconSelectorSignal
+}
 // import Converters.modToValue
 
 enum Variant {
@@ -49,23 +68,25 @@ extension (selector: VariantSelector) {
 type SizeSelector = Size.type => Size
 type IconNameSelector = IconName.type => IconName
 
-case class Button(variant: Variant, size: Size, icon: IconNameSelector)
+case class Button(variant: Variant, size: Size, icon: Signal[IconName])
 
 object Button {
   transparent inline def apply(
       inline variant: VariantSelector = _.Primary,
       inline size: SizeSelector = _.Medium,
-      inline icon: IconNameSelector = _.Empty
+      inline icon: Signal[IconNameSelector] = Val(_.Empty)
   ): Button = {
     Button(
       variant = variant(Variant),
       size = size(Size),
-      icon = icon(IconName)
+      icon = icon.map(_(IconName))
     )
   }
 }
 
 @main def run() = {
-  val button4 = Button(variant = Variant.Secondary, icon = _.Home)
+  val iconSignal: Signal[IconName] = Val(IconName.Home)
+
+  val button4 = Button(variant = Variant.Secondary, icon = iconSignal)
   println(button4)
 }
