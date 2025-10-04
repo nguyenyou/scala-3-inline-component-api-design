@@ -1,5 +1,9 @@
 ## Component API Design
 
+```sh
+scala -Xshow-phases
+```
+
 ```scala
 package main
 
@@ -41,8 +45,8 @@ object Button {
 
 Run:
 
-```
-scalac -Xprint:inline main.scala
+```sh
+scalac -Xprint:inlining main.scala
 ```
 
 Output:
