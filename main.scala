@@ -1,5 +1,8 @@
 package main
 
+inline implicit def variantToVariantSelector(x: Variant): VariantSelector =
+  (_: Variant.type) => x
+
 enum Variant {
   case Primary, Secondary
 }
@@ -33,6 +36,6 @@ object Button {
 }
 
 @main def run() = {
-  val button4 = Button(variant = _.Secondary, icon = _.Home)
+  val button4 = Button(variant = Variant.Secondary, icon = _.Home)
   println(button4)
 }
